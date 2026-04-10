@@ -109,3 +109,8 @@
 .pabLabel{display:block;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
 .pabText{font-size:12px;color:#5F5E5A;line-height:1.65}
 @media(max-width:600px){.pabGrid{grid-template-columns:1fr}}
+.heroSub{font-size:14px;color:#5F5E5A;line-height:1.7;margin-bottom:1.5rem}
+.statsRow{display:flex;gap:24px;margin-bottom:2rem;padding:1rem 1.25rem;background:#F1EFE8;border-radius:10px}
+.statItem{display:flex;flex-direction:column;gap:2px}
+.statNum{font-family:'DM Serif Display',serif;font-size:28px;color:#185FA5;line-height:1}
+.statLbl{font-size:11px;color:#888780}

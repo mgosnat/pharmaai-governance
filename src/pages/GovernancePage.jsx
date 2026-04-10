@@ -59,6 +59,8 @@ const DATA = {
       approach: 'Approach', approachText: '20-question assessment across 5 dimensions: AI Usage Policy / Risk Classification (EU AI Act) / Data Governance / Human Oversight / Training & Culture. Generates a personalised framework adapted to your organisation\'s profile and identified gaps.',
       result: 'Result', resultText: 'A structured, actionable AI governance framework with policy statement, risk register, data rules, oversight requirements, and a 90-day priority action plan — ready to present to leadership.',
       heroTitle1: 'AI Governance', heroTitle2: 'Framework Builder',
+      heroSub: '20-question assessment across 5 governance dimensions. Generates a personalised AI governance framework with policy, risk classification, data rules, oversight requirements and a 90-day action plan.',
+      statQuestions: 'questions', statDimensions: 'dimensions', statFramework: 'framework generated',
       cta: 'Start assessment →', stepProfile: 'Organisation profile — Step 1/3',
       profileTitle: 'Tell us about your organisation', orgName: 'Organisation name',
       orgNamePlaceholder: 'e.g. Roche Basel', orgType: 'Organisation type', orgTypeDefault: 'Select…',
@@ -136,6 +138,8 @@ const DATA = {
       approach: 'Approche', approachText: 'Évaluation de 20 questions sur 5 dimensions : Politique d\'usage IA / Classification des risques (EU AI Act) / Gouvernance des données / Supervision humaine / Formation & Culture. Génère un cadre personnalisé adapté au profil et aux lacunes identifiées.',
       result: 'Résultat', resultText: 'Un cadre de gouvernance IA structuré et actionnable — politique d\'usage, registre des risques, règles de données, exigences de supervision et plan d\'action prioritaire sur 90 jours — prêt à présenter à la direction.',
       heroTitle1: 'Cadre de gouvernance', heroTitle2: 'IA — Builder',
+      heroSub: 'Évaluation de 20 questions sur 5 dimensions de gouvernance. Génère un cadre de gouvernance IA personnalisé avec politique d\'usage, classification des risques, règles de données, exigences de supervision et plan d\'action sur 90 jours.',
+      statQuestions: 'questions', statDimensions: 'dimensions', statFramework: 'cadre généré',
       cta: 'Démarrer l\'évaluation →', stepProfile: 'Profil organisation — Étape 1/3',
       profileTitle: 'Parlez-nous de votre organisation', orgName: 'Nom de l\'organisation',
       orgNamePlaceholder: 'ex. Sanofi France', orgType: 'Type d\'organisation', orgTypeDefault: 'Choisir…',
@@ -389,28 +393,18 @@ Each section: 1 heading line, then 3-5 concrete actionable points specific to th
           <div className={styles.landingCard}>
             <div className={styles.eyebrow}><span className={styles.dot} />{T.eyebrow}</div>
             <h1 className={styles.heroTitle}>{T.heroTitle1}<br /><em>{T.heroTitle2}</em></h1>
-
-            <div className={styles.pabGrid}>
-              <div className={styles.pabBlock}>
-                <span className={styles.pabLabel} style={{ color: '#E24B4A' }}>{T.problem}</span>
-                <p className={styles.pabText}>{T.problemText}</p>
-              </div>
-              <div className={styles.pabBlock}>
-                <span className={styles.pabLabel} style={{ color: '#185FA5' }}>{T.approach}</span>
-                <p className={styles.pabText}>{T.approachText}</p>
-              </div>
-              <div className={styles.pabBlock}>
-                <span className={styles.pabLabel} style={{ color: '#1D9E75' }}>{T.result}</span>
-                <p className={styles.pabText}>{T.resultText}</p>
-              </div>
-            </div>
-
+            <p className={styles.heroSub}>{T.heroSub}</p>
             <div className={styles.dimPills}>
               {d.dimensions.map(dim => (
                 <div key={dim.id} className={styles.dimPill} style={{ background: dim.bg, color: dim.color }}>
                   <span>{dim.icon}</span><span>{dim.label}</span>
                 </div>
               ))}
+            </div>
+            <div className={styles.statsRow}>
+              <div className={styles.statItem}><span className={styles.statNum}>20</span><span className={styles.statLbl}>{T.statQuestions}</span></div>
+              <div className={styles.statItem}><span className={styles.statNum}>5</span><span className={styles.statLbl}>{T.statDimensions}</span></div>
+              <div className={styles.statItem}><span className={styles.statNum}>1</span><span className={styles.statLbl}>{T.statFramework}</span></div>
             </div>
             <button className={styles.btnPrimary} onClick={() => setStep('profile')}>{T.cta}</button>
           </div>
