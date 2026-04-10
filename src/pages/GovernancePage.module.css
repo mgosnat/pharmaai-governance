@@ -110,7 +110,8 @@
 .pabText{font-size:12px;color:#5F5E5A;line-height:1.65}
 @media(max-width:600px){.pabGrid{grid-template-columns:1fr}}
 .heroSub{font-size:14px;color:#5F5E5A;line-height:1.7;margin-bottom:1.5rem}
-.statsRow{display:flex;gap:24px;margin-bottom:2rem;padding:1rem 1.25rem;background:#F1EFE8;border-radius:10px}
-.statItem{display:flex;flex-direction:column;gap:2px}
-.statNum{font-family:'DM Serif Display',serif;font-size:28px;color:#185FA5;line-height:1}
-.statLbl{font-size:11px;color:#888780}
+.statsRow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:2rem;background:#E6F1FB;border-radius:12px;overflow:hidden;border:0.5px solid rgba(24,95,165,0.15)}
+.statItem{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:1.25rem 1rem;border-right:0.5px solid rgba(24,95,165,0.15)}
+.statItem:last-child{border-right:none}
+.statNum{font-family:'DM Serif Display',serif;font-size:36px;color:#185FA5;line-height:1;font-weight:400}
+.statLbl{font-size:12px;color:#185FA5;opacity:0.7;text-align:center}
