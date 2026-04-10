@@ -286,8 +286,7 @@ function exportPDF(org, answers, dimScores, overall, framework, dimensions, matu
   doc.save('PharmaAI-Governance-Framework.pdf')
 }
 
-export default function GovernancePage() {
-  const [lang, setLang] = useState('en')
+export default function GovernancePage({ lang = 'en' }) {
   const [step, setStep] = useState('landing')
   const [org, setOrg] = useState({ name: '', type: '', size: '', systems: [] })
   const [answers, setAnswers] = useState(new Array(20).fill(null))
@@ -300,13 +299,7 @@ export default function GovernancePage() {
   const d = DATA[lang]
   const T = d.T
 
-  function toggleLang() {
-    setLang(l => l === 'en' ? 'fr' : 'en')
-    setStep('landing')
-    setOrg({ name: '', type: '', size: '', systems: [] })
-    setAnswers(new Array(20).fill(null))
-    setCurrent(0); setDimScores([]); setOverall(0); setFramework(null)
-  }
+
 
   function toggleSystem(s) {
     setOrg(o => ({ ...o, systems: o.systems.includes(s) ? o.systems.filter(x => x !== s) : [...o.systems, s] }))
@@ -381,7 +374,7 @@ Each section: 1 heading line, then 3-5 concrete actionable points specific to th
           <span className={styles.navSub}>{lang === 'fr' ? 'Governance Framework Builder' : 'Governance Framework Builder'}</span>
         </div>
         <div className={styles.navRight}>
-          <button className={styles.navBtnLang} onClick={toggleLang}>{T.langToggle}</button>
+          <a href={lang === 'en' ? '/fr' : '/'} className={styles.navBtnLang}>{T.langToggle}</a>
           {step === 'results' && <button className={styles.navBtn} onClick={reset}>{T.newAssessment}</button>}
         </div>
       </nav>
